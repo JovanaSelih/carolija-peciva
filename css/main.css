@@ -105,11 +105,6 @@ body {
     color: #1a2232;
     font-family: 'Zilla Slab', serif
 }
-.unstile-list {
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
-}
 h2 {
     font-family: 'Cookie', cursive;
     font-size: 10em;
@@ -119,12 +114,37 @@ h3 {
     font-weight: 500;
     font-size: 2.4em
     color: #1a2232;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+h3 span {
+    position: relative;
+}
+h3 span::after {
+    content: '';
+    position: absolute;
+    width: 311px;
+    height: 1px;
+    top: 50%;
+    right: -326px;
+    background-color: #e3e1e1;
+}
+h5 {
+    font-weight: 700;
+    margin: 0;
+}
+p,h5 {
+    font-size: 1.8em;
+    line-height: 30px;
 }
 a {
     text-decoration: none;
 }
-p {
-    font-size: 1.8em;
+strong {
+    font-weight: 700;
+}
+hr {
+    margin: 40px 0;
 }
 .container {
     max-width: 1300px;
@@ -132,37 +152,362 @@ p {
     padding-right: 15px;
     margin: 0 auto;
 }
+section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+blockquote {
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 3em;
+    color: #b7b7b7;
+    position: relative;
+    margin: 0;
+    padding: 30px 60px;
+}
+blockquote::after,
+blockquote::before {
+    content: '“';
+    position: absolute;
+    font-size: 128px;
+    font-family: 'Cookie', cursive;
+    color: #b7b7b7;
+    opacity: .5;
+    line-height: 40px;
+    text-transform: none;
+    font-style: normal;
+}
+blockquote::after {
+    content: '”';
+    bottom: -22px;
+    right: 0;
+}
+blockquote::before {
+    top: 44px;
+    left: 0;
+}
+.btn {
+    font-weight: 500;
+    font-size: 1.8em;
+    color: #000;
+    background: #f34949;
+    padding: 6px 27px;
+}
+.btn-tab {
+    background-color: transparent;
+    border: 2px solid #3b3b3b;
+}
+.btn-tab:hover,
+.btn-tab.active {
+    background-color: #3b3b3b;
+    color: #fff;
+}
+ul {
+    list-style: none;
+}
+ul li::before {
+    content: "\2022";
+    color: #f34949;
+    font-weight: bold;
+    display: inline-block;
+    width: 40px;
+    margin-left: -40px;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+img {
+    width: 100%;
+    height: auto;
+}
 /* ======================HEADER======================*/
 .header {
-    padding-top: 13px;
-    padding-bottom: 8px;
+    padding-top: 13px 0 8px;
 }
-.nav {
+nav {
+    display: table;
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f34949;
+    text-align: center;
+    color: #000;
 }
-@media only screen and (min-width: 1024px) {
-    .nav {
-        display: table;
-        position: fixed;
-        top: 0;
-        left: 50px;
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        text-align: center;
+nav ul {
+    display: table-cell;
+    vertical-align: middle;
+}
+nav a {
+    color: #fff;
+    font-size: 3.6em;
+    line-height: 70px;
+    padding: 5px 10px;
+}
+nav .btn {
+    background: #fff;
+    font-size: 3.6em;
+}
+nav .close {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+    margin: 0;
+}
+nav .close span {
+    width: 35px;
+    height: 2px;
+    background: white;
+    display: block;
+    transform: rotate(45deg);
+}
+nav .close span:nth-child(2) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -2px;
+}
+.header-logo {
+    display: inline-block;
+}
+.burger {
+    width: 44px;
+    height: 25px;
+    padding: 5px 0;
+    float: right;
+    margin-top: 12px;
+}
+.burger span {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    display: block;
+    margin-top: 9px;
+}
+.burger span:nth-child(1) {
+    margin-top: 0;
+}
+/* ======== HEADER END ========== */
+
+/* ======== MENU ========== */
+.menu .head-title {
+    max-width: 551px;
+    margin: 0 auto;
+}
+.menu h3 {
+    position: relative;
+    color: #f34949;
+    padding: 0 15px;
+    overflow: hidden;
+}
+.menu h3 span {
+    display: inline-block;
+    position: relative;
+    padding: 0 20px;
+}
+.menu h3 span:before,
+.menu h3 span:after {
+    content: '';
+    display: block;
+    width: 1000px;
+    position: absolute;
+    top: 0.73em;
+    border-top: 1px solid red;
+}
+.menu h3 span:before {
+    right: 100%;
+}
+.menu h3 span:after {
+    left: 100%;
+}
+.menu h1 {
+    font-size: 2em;
+    color: #363636;
+    font-weight: 400;
+    padding-bottom: 40px;
+    display: inline-block;
+    max-width: 1100px;
+}
+.menu .tabs {
+    padding-bottom: 60px;
+}
+.menu .tabs li {
+ text-transform: uppercase;
+ display: inline-block;
+ margin: 0 5px;
+ font-size: 1.4em;
+ cursor: pointer;
+}
+.menu .meals ul {
+    display: none;
+    text-align: left;
+}
+.menu .meals ul.active {
+    display: block;
+}
+.menu .meals li {
+    position: relative;
+    margin-bottom: 25px;
+}
+.menu .meals p {
+    font-size: 1.8em;
+    margin: 0;
+    display: inline;
+    font-weight: 500;
+    padding-right: 15px;
+    background: #fff;
+}
+.menu .meals li::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #e3e1e1;
+    bottom: 30px;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+}
+.menu .meals small {
+    display: block;
+    color: #b7b7b7;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.4em;
+}
+.menu .meals span {
+    position: absolute;
+    right: 0;
+    font-weight: 500;
+    font-size: 2em;
+    background: #fff;
+    bottom: 20px;
+    padding-left: 15px;
+}
+/* ======== MENU END ========== */
+
+/* ======== ABOUT ========== */
+.about p:first-of-type {
+    font-size: 4em;
+    font-weight: 300;
+    line-height: 45px;
+}
+.about li {
+    font-size: 1.8em;
+}
+/* ======== ABOUT END========== */
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 768px) {
+    section {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    /* ======== MENU ========== */
+    .menu .meals li {
+        float: left;
+        width: 46%;
+        margin-bottom: 35px;
+    }
+    .menu .meals li:nth-child(even) {
+        margin-left: 4%;
+    }
+    .menu .meals li:nth-child(odd) {
+         margin-right: 4%;
+    }
+    .menu .tabs li {
+        padding: 11px 27px;
+        margin: 0 20px;
+    }
+    
+@media only screen and (min-width: 992px) {
+    /* ======== ABOUT ========== */
+    .about p {
+        column-count: 2;
+        column-gap: 60px;
+    }
+    .about p:first-of-type {
+        column-count: 1;
+    }
+    .about hr,
+    .about h5,
+    .about ul,
+    .about blockquote {
+        display: inline-block;
+        width: calc(50% - 32px);
+        vertical-align: top;
+    }
+    .about hr,
+    .about h5,
+    .about ul {
+        margin-right: 60px;
+    }
+    blockquote {
+        margin-top: -30px;
+    }
+    /* ======== ABOUT END ========== */
+/* ======== HEADER ========== */
+    header {
+        padding: 25px 0 10px;
+    }
+    nav {
+        display: block;
+        position: initial;
+        width: auto;
+        height: auto;
+        background: inherit;
+        float: right;
+    }
+    nav li {
+        float: left;
+    }
+    nav a {
         color: #000;
+        margin-left: 20px;
     }
-    .nav ul {
-        display: table-cell;
-        vertical-align: middle;
+    nav a:not(.btn).active,
+    nav a:not(.btn):hover {
+        color: #f34949;
+        border-top: 1px solid #f34949;
+        border-bottom: 1px solid #f34949;
     }
-    .nav a {
-        color: #1a2232;
-        font-size: 3.6em;
-        line-height: 70px;
-        padding: 5px 10px;
+    nav a,
+    nav a.btn {
+        font-size: 1.8em;
     }
+    nav a.btn {
+        color: #fff;
+        background: #f34949;
+    }
+    .burger,
+    nav .close {
+        display: none;
+    }
+    /* ======== HEADER END ========== */
+
+
+    /* ======== MENU ========== */
+    .menu h1 {
+        font-size: 2.4em;
+    }
+    .menu .meals li {
+        margin-bottom: 50px;
+    }
+    /* ======== MENU END========== */
+
 }
+
+
+
+
+
 
 
 
@@ -175,7 +520,16 @@ p {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
+.unstyle-list {
+    margin: 0;
+    padding: 0;
+}
+.unstyle-list li::before {
+    display: none;
+}
+.text-center {
+    text-align: center;
+}
 /*
  * Hide visually and from screen readers
  */
@@ -183,7 +537,10 @@ p {
 .hidden {
     display: none !important;
 }
-
+button {
+    background: transparent;
+    border: none;
+}
 /*
  * Hide only visually, but have it available for screen readers:
  * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
@@ -252,22 +609,6 @@ p {
     clear: both;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
 
 /* ==========================================================================
    Print styles.
