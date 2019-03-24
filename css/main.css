@@ -99,11 +99,13 @@ textarea {
 * {
     box-sizing: border-box;
 }
+
 body {
     font-size: 62.5%;
     font-weight: 300;
     color: #1a2232;
-    font-family: 'Zilla Slab', serif
+    font-family: 'Zilla Slab', serif;
+    background: url(../img/hero-background.png) no-repeat top center;
 }
 h2 {
     font-family: 'Cookie', cursive;
@@ -164,6 +166,7 @@ hr {
 section {
     padding-top: 20px;
     padding-bottom: 20px;
+    display: block;
 }
 blockquote {
     text-align: center;
@@ -199,7 +202,7 @@ blockquote::before {
 .btn {
     font-weight: 500;
     font-size: 1.8em;
-    color: #000;
+    color: #fff;
     background: #1a2232;
     padding: 6px 27px;
 }
@@ -225,17 +228,40 @@ ul li::before {
     line-height: 30px;
     text-align: center;
 }
-img {
-    width: 25%;
-    height: auto;
-}
 /* ======================HEADER======================*/
-.header {
-    padding-top: 13px 0 8px;
+header {
+    padding: 13px 8px;
+    display: block;
+}
+.header-logo {
+    display: block;
+    float: left;
+    width: 65%;
+    padding: 0;
+}
+.header-logo img {
+    display: block;
+    width: 100%;
 }
 nav {
-    display: table;
     display: none;
+}
+/*.hero-image {
+  background-image: url("hero-background.png");
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-text {
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
     position: fixed;
     top: 0;
     left: 0;
@@ -244,6 +270,22 @@ nav {
     background: #1a2232;
     text-align: center;
     color: #000;
+}*/
+header button {
+    background: none;
+    float: right;
+    display: block;
+    border-radius: none;
+    border: none;
+    padding: 0;
+
+}
+header button span {
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    margin: 0 0 10px;
 }
 nav ul {
     display: table-cell;
@@ -255,52 +297,30 @@ nav a {
     line-height: 70px;
     padding: 5px 10px;
 }
-nav .btn {
-    background: #fff;
-    font-size: 3.6em;
-}
-nav .close {
-    width: 45px;
-    height: 45px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: block;
+
+
+
+/* ======== HEADER END ========== */
+
+.hero {}
+.hero ul {
+    padding: 0;
     margin: 0;
 }
-nav .close span {
-    width: 35px;
-    height: 2px;
-    background: white;
-    display: block;
-    transform: rotate(45deg);
+.hero li {}
+.hero div {
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ overflow: hidden;   
 }
-nav .close span:nth-child(2) {
-    transform: rotate(-45deg);
-    position: relative;
-    top: -2px;
-}
-.header-logo {
-    display: inline-block;
-}
-.burger {
-    width: 44px;
-    height: 25px;
-    padding: 5px 0;
-    float: right;
-    margin-top: 12px;
-}
-.burger span {
-    width: 100%;
-    height: 2px;
-    background-color: #1a2232;
-    display: block;
-    margin-top: 9px;
-}
-.burger span:nth-child(1) {
-    margin-top: 0;
-}
-/* ======== HEADER END ========== */
+.hero div img {}
+.hero  h1 {}
+.hero  p {}
+.hero button {}
+
+
+
 
 /* ======== MENU ========== */
 .menu .head-title {
@@ -351,49 +371,35 @@ nav .close span:nth-child(2) {
  font-size: 1.4em;
  cursor: pointer;
 }
-.menu .meals ul {
-    display: none;
-    text-align: left;
-}
-.menu .meals ul.active {
-    display: block;
-}
-.menu .meals li {
-    position: relative;
-    margin-bottom: 25px;
-}
-.menu .meals p {
-    font-size: 1.8em;
+/*------ meals list ---------*/
+.meals {
     margin: 0;
-    display: inline;
-    font-weight: 500;
-    padding-right: 15px;
-    background: #fff;
+    padding: 0;
 }
-.menu .meals small {
-    display: block;
-    color: #b7b7b7;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.4em;
+.meals li {
+    margin-bottom: 30px;
 }
-.menu .meals span {
+.meals div {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.meals img {
+    width: 100%;
+}
+.meals p {
+    position: relative;
+    padding-right: 80px;
+    margin: 0;
+    line-height: normal;
+}
+.meals span {
     position: absolute;
+    top: 2px;
     right: 0;
-    font-weight: 500;
-    font-size: 2em;
-    background: #fff;
-    bottom: 20px;
-    padding-left: 15px;
 }
 
-/* fotografije sa tekstom */
-.product {
 
-}
-.product-image {
-    width: 25%;
-}
 /* ======== MENU END ========== */
 
 /* ======== ABOUT ========== */
@@ -420,7 +426,7 @@ nav .close span:nth-child(2) {
     /* ======== MENU ========== */
     .menu .meals li {
         float: left;
-        width: 46%;
+        width: 25%;
         margin-bottom: 35px;
     }
     .menu .meals li:nth-child(even) {
@@ -433,6 +439,13 @@ nav .close span:nth-child(2) {
         padding: 11px 27px;
         margin: 0 20px;
     }
+    /*------ meals list ---------*/
+    .meals li {
+        float: left;
+        max-width: 50%;
+        padding: 0 25px;
+    }
+
     
 @media only screen and (min-width: 992px) {
     /* ======== ABOUT ========== */
@@ -459,7 +472,21 @@ nav .close span:nth-child(2) {
     blockquote {
         margin-top: -30px;
     }
+    /*------ meals list ---------*/
+    .meals li {
+        max-width: 33.3%;
+        padding: 0 25px;
+    }
+
     /* ======== ABOUT END ========== */
+
+    @media only screen and (min-width: 992px) {
+    /*------ meals list ---------*/
+    .meals li {
+        max-width: 25%;
+        padding: 0 25px;
+    }
+
 /* ======== HEADER ========== */
     header {
         padding: 25px 0 10px;
@@ -476,7 +503,7 @@ nav .close span:nth-child(2) {
         float: left;
     }
     nav a {
-        color: #000;
+        color: #fff;
         margin-left: 20px;
     }
     nav a:not(.btn).active,
@@ -497,25 +524,6 @@ nav .close span:nth-child(2) {
     nav .close {
         display: none;
     }
-    /* ======== HEADER END ========== */
-
-
-    /* ======== MENU ========== */
-    .menu h1 {
-        font-size: 2.4em;
-    }
-    .menu .meals li {
-        margin-bottom: 50px;
-    }
-    .product {
-        float: left;
-    }
-    .product-image {
-        width: 20%;
-    }
-    /* ======== MENU END========== */
-
-}
 
 
 
@@ -612,15 +620,19 @@ button {
  *    `:before` to contain the top-margins of child elements.
  */
 
-.clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
-
-.clearfix:after {
-    clear: both;
-}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
 
 
 /* ==========================================================================

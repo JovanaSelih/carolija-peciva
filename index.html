@@ -16,12 +16,28 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+
 </head>
 
 <body>
-  <header class="container">
-    <a href="index.html" class="header-logo"><img src="img/Carolija logo.png" alt="Carolija Peciva & Kafe logo"></a>
+  <header>
+    <div class="container clearfix">
+    <a href="index.html" class="header-logo large">
+      <img src="img/carolija-logo-large.png" alt="Carolija Peciva & Kafe logo">
+    </a>
+    <button class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <nav class="nav">
+      <a href="index.html" class="header-logo small">
+        <img src="img/carolija-logo.png" alt="Carolija Peciva & Kafe logo">
+      </a>
+      <button class="close">
+        <span></span>
+        <span></span>
+      </button>
       <ul class="unstile-list">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="">Početna</a></li>
@@ -32,99 +48,148 @@
         <li><a href="#modal" class="btn">Poruči</a></li>
       </ul>
     </nav>
-    <button class="close">
-      <span></span>
-      <span></span>
-    </button>
-    </nav>
-    <button class="burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+  </div>
   </header>
+  <section class="hero">
+      <ul>
+        <li>
+          <div>
+            <img src="img/hero-1.png" alt="">
+          </div>
+          <h1>Okusi čaroliju</h1>
+          <p>Unesite radost u vaš život pecivom vrhunskog kvaliteta. Čarobni zalogaji za svaku priliku.</p>
+          <button>Poruči</button>
+        </li>
+      </ul>
+  </section>  
+
   
-<main>
-    <section class="menu text-center" id="menu">
-      <div class="container">
-        <div class="head-title">
-          <h3><span>Peciva</span></h3>
-        </div>
-        <h1>Naša peciva su prvenstveno zdrava, bez veštačkih aditiva i što je najbitnije ukusna. Čarolija nudi širok izbor kiflica, kroasana, pita, i sendviča pravljenih sa domaćim sastojcima. Slana, slatka ili integralna, za svačiji ukus.</h1>
-        <ul class="tabs unstyle-list">
-          <li class="btn btn-tab active">Slana</li>
-          <li class="btn btn-tab">Integralna</li>
-          <li class="btn btn-tab">Slatka</li>
-        </ul>
-</section>
 <!-- Fotografije sa tekstom -->
 
-        <div class="meals">
-          <ul class="unstyle-list clearfix active">
-            <li><img src="img/1 Heljda pituljice sa ajvarom.png"></li>
-            <li>
-              <p>Heljda pituljice sa ajvarom</p>
-              <span>28 din.</span>
-            </li>
-            <li><img src="img/2 Heljda pituljice sa sirom.png"></li>
-            <li>
-              <p>Heljda pituljice sa sirom</p>
-              <span>25 din.</span>
-            </li>
-            <li><img src="img/3 Kiflice sa sirom.png"></li>
-            <li>
-              <p>Kiflice sa sirom</p>
-              <span>20 din.</span>
-            </li>
-            <li><img src="img/4 Mini pica carolija.png"></li>
-            <li>
-              <p>Mini pizza čarolija</p>
-              <span>25 din.</span>
-            </li>
-            <li><img src="img/5 Slani kroasan.png"></li>
-            <li>
-              <p>Slani kroasan</p>
-              <span>20 din.</span>
-            </li>
-            <li><img src="img/6 Sojini stapici sa kimom.png"></li>
-            <li>
-              <p>Sojini štapići sa kimom</p>
-              <span>20 din.</span>
-            </li>
-            <li><img src="img/7 Speltini stapici.png"></li>
-            <li>
-              <p>Speltini štapići</p>
-              <span>20 din.</span>
-            </li>
-            <li><img src="img/8 Multiseed stap sa maslinama i paprikom.png"></li>
-            <li>
-              <p>Multiseed štap sa maslinama i paprikom</p>
-              <span>95 din.</span>
-            </li>
-            <li><img src="img/9 Mini proja sa semenkama.png"></li>
-            <li>
-              <p>Mini proja sa semenkama</p>
-              <span>30 din.</span>
-            </li>
-            <li><img src="img/10 Tofu kiflice.png"></li>
-            <li>
-              <p>Tofu kiflice</p>
-              <span>20 din.</span>
-            </li>
-            <li><img src="img/11 Veliki beli sendvic.png"></li>
-            <li>
-              <p>Veliki beli sendvič</p>
-              <span>160 din.</span>
-            </li>
-            <li><img src="img/12 Mini beli sendvic sa dimljenom pecenicom ili kulenom.png"></li>
-            <li>
-              <p>Mini beli sendvič sa dimljenom pečenicom ili kulenom</p>
-              <span>55 din.</span>
-            </li>
-           </ul>
-        </div>
+<section>
+  <div class="container">
+  <h3>Peciva</h3>
+  <p>
+    Naša peciva su prvenstveno zdrava, bez veštačkih aditiva i što je najbitnije ukusna. Čarolija nudi širok izbor kiflica, kroasana, pita, i sendviča pravljenih sa domaćim sastojcima. Slana, slatka ili integralna, za svačiji ukus. 
+  </p>
+    <ul class="tabs unstyle-list">
+      <li class="btn btn-tab active">Slana</li>
+      <li class="btn btn-tab">Integralna</li>
+      <li class="btn btn-tab">Slatka</li>
+    </ul>
+  <ul class="meals unstyle-list clearfix">
+    <li>
+      <div>
+        <img src="img/1-heljda-pituljice-sa-ajvarom.png" alt="">
       </div>
-    </section>
+      <p>
+        Heljda pituljice sa ajvarom
+        <span>28 din.</span>
+      </p>
+    </li>
+    <li>
+      <div>
+        <img src="img/2-heljda-pituljice-sa-sirom.png" alt="">
+      </div>
+      <p>
+        Heljda pituljice sa sirom
+        <span>25 din.</span>
+      </p>
+    </li>
+    <li>
+      <div>
+        <img src="img/3-kiflice-sa-sirom.png" alt="">
+      </div>
+      <p>
+        Kiflice sa sirom
+        <span>20 din.</span>
+      </p>
+    </li>
+    <li>
+      <div>
+        <img src="img/4-mini-pica-carolija.png" alt="">
+      </div>
+      <p>
+        Mini pizza čarolija
+        <span>25 din.</span>
+      </p>
+    </li>
+    <li>
+      <div>
+        <img src="img/5-slani-kroasan.png" alt="">
+      </div>
+      <p>
+        Slani kroasan
+        <span>20 din.</span>
+      </p>
+    </li>
+    <li>
+      <div>
+        <img src="img/6-sojini-stapici-sa-kimom.png" alt="">
+      </div>
+      <p>
+        Sojini štapići sa kimom
+        <span>20 din.</span>
+      </p>
+    </li>
+    <li>
+      <div>
+        <img src="img/7-speltini-stapici.png" alt="">
+      </div>
+      <p>
+        Speltini štapići
+        <span>20 din.</span>
+      </p>
+    </li>
+    <li>
+      <div>
+        <img src="img/8-multiseed-stap-sa-maslinama-i-paprikom.png" alt="">
+      </div>
+      <p>
+        Multiseed štap 
+        <span>95 din.</span>
+      </p>
+    </li>
+    <li>
+      <div>
+        <img src="img/9-mini-proja-sa-semenkama.png" alt="">
+      </div>
+      <p>
+        Mini proja sa semenkama
+        <span>30 din.</span>
+      </p>
+    </li>
+    <li>
+      <div>
+        <img src="img/10-tofu-kiflice.png" alt="">
+      </div>
+      <p>
+        Tofu kiflice
+        <span>20 din.</span>
+      </p>
+    </li>
+    <li>
+      <div>
+        <img src="img/11-veliki-beli-sendvic.png" alt="">
+      </div>
+      <p>
+        Veliki beli sendvič
+        <span>160 din.</span>
+      </p>
+    </li>
+    <li>
+      <div>
+        <img src="img/12-mini-beli-sendvic-sa-dimljenom-pecenicom-ili-kulenom.png" alt="">
+      </div>
+      <p>
+        Mini beli sendvič sa dimljenom pečenicom ili kulenom
+        <span>55 din.</span>
+      </p>
+    </li>
+   </ul>
+ </div>
+</section>
+   
   
   <section class="about">
       <div class="container">
