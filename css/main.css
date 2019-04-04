@@ -106,6 +106,7 @@ body {
     color: #1a2232;
     font-family: 'Zilla Slab', serif;
     background: url(../img/hero-background.png) no-repeat top center;
+    background: url(../img/footer-background.png) no-repeat bottom center;
 }
 h2 {
     font-family: 'Cookie', cursive;
@@ -114,37 +115,35 @@ h2 {
 }
 h3 {
     font-weight: 500;
-    font-size: 2.4em
+    font-size: 2em;
     color: #1a2232;
     text-transform: uppercase;
     overflow: hidden;
+    text-align: center;
+    display: block;
+    position: relative;
+}
+h3::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 13px;
+    left: 0;
+    background-color: #1a2232;
 }
 h3 span {
     position: relative;
-}
-h3 span::before {
-    content: '';
-    position: absolute;
-    width: 311px;
-    height: 1px;
-    top: 50%;
-    /* left: -326px; */
-    background-color: #1a2232;
-}
-h3 span::after {
-    content: '';
-    position: absolute;
-    width: 311px;
-    height: 1px;
-    top: 50%;
-    right: -326px;
-    background-color: #1a2232;
+    background: #fff;
+    padding: 0 16px;
 }
 h5 {
     font-weight: 700;
     margin: 0;
-}
-p,h5 {
+    font-size: 1.8em;
+    line-height: 30px;
+} 
+p {
     font-size: 1.8em;
     line-height: 30px;
 }
@@ -229,23 +228,10 @@ ul li::before {
     text-align: center;
 }
 /* ======================HEADER======================*/
-header {
-    padding: 13px 8px;
-    display: block;
-}
-.header-logo {
-    display: block;
-    float: left;
-    width: 65%;
-    padding: 0;
-}
-.header-logo img {
-    display: block;
-    width: 100%;
-}
-nav {
-    display: none;
-}
+
+
+
+
 /*.hero-image {
   background-image: url("hero-background.png");
   background-color: #cccccc;
@@ -278,7 +264,7 @@ header button {
     border-radius: none;
     border: none;
     padding: 0;
-
+    padding: 10px 0;
 }
 header button span {
     width: 50px;
@@ -286,6 +272,10 @@ header button span {
     background-color: #fff;
     display: block;
     margin: 0 0 10px;
+
+}
+nav {
+    display: none;
 }
 nav ul {
     display: table-cell;
@@ -297,8 +287,16 @@ nav a {
     line-height: 70px;
     padding: 5px 10px;
 }
+.header-logo {
+    float: left;
+    max-width: 190px;
+    padding: 10px 0;
 
-
+}
+.header-logo img {
+    max-width: 100%;
+    display: block;
+}
 
 /* ======== HEADER END ========== */
 
@@ -307,17 +305,29 @@ nav a {
     padding: 0;
     margin: 0;
 }
-.hero li {}
-.hero div {
- width: 50px;
- height: 50px;
- border-radius: 50%;
- overflow: hidden;   
+.hero .img-overlay {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 12px solid #fff;
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
 }
-.hero div img {}
-.hero  h1 {}
-.hero  p {}
-.hero button {}
+.hero .img-overlay img {
+    max-width: 100%;
+    display: block;
+}
+.hero  h1 {
+    text-align: center;
+}
+.hero  p {
+    text-align: center;
+}
+.hero .btn {
+    width: 100px;
+    margin: 0 auto;
+    display: block;
+}
 
 
 
@@ -365,12 +375,33 @@ nav a {
     padding-bottom: 60px;
 }
 .menu .tabs li {
- text-transform: uppercase;
- display: inline-block;
- margin: 0 5px;
- font-size: 1.4em;
- cursor: pointer;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 1.4em;
+    cursor: pointer;
 }
+
+.tab-wrap {
+    height: 30px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.wrap-tab {
+    display: table;   /* Allow the centering to work */
+    margin: 0 auto;
+}
+
+ul.tabs {
+    list-style: none;
+}
+
+ul.tabs li {
+    display: inline;
+    padding: 5px 15px;
+}
+
 /*------ meals list ---------*/
 .meals {
     margin: 0;
@@ -380,10 +411,10 @@ nav a {
     margin-bottom: 30px;
 }
 .meals div {
-    overflow: hidden;
     width: 100%;
     margin-bottom: 10px;
 }
+
 .meals img {
     width: 100%;
 }
@@ -413,6 +444,8 @@ nav a {
 }
 /* ======== ABOUT END========== */
 
+
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
@@ -425,7 +458,9 @@ nav a {
     }
     /* ======== MENU ========== */
     .menu .meals li {
-        float: left;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         width: 25%;
         margin-bottom: 35px;
     }
@@ -441,11 +476,13 @@ nav a {
     }
     /*------ meals list ---------*/
     .meals li {
-        float: left;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         max-width: 50%;
         padding: 0 25px;
     }
-
+}
     
 @media only screen and (min-width: 992px) {
     /* ======== ABOUT ========== */
@@ -472,63 +509,22 @@ nav a {
     blockquote {
         margin-top: -30px;
     }
-    /*------ meals list ---------*/
     .meals li {
         max-width: 33.3%;
         padding: 0 25px;
     }
+}
+    
 
-    /* ======== ABOUT END ========== */
-
-    @media only screen and (min-width: 992px) {
-    /*------ meals list ---------*/
+@media only screen and (min-width: 1200px) {
+/*------ meals list ---------*/
     .meals li {
-        max-width: 25%;
+        max-width: 24%;
         padding: 0 25px;
-    }
-
-/* ======== HEADER ========== */
-    header {
-        padding: 25px 0 10px;
-    }
-    nav {
-        display: block;
-        position: initial;
-        width: auto;
-        height: auto;
-        background: inherit;
-        float: right;
-    }
-    nav li {
-        float: left;
-    }
-    nav a {
-        color: #fff;
-        margin-left: 20px;
-    }
-    nav a:not(.btn).active,
-    nav a:not(.btn):hover {
-        color: #1a2232;
-        border-top: 1px solid #1a2232;
-        border-bottom: 1px solid #1a2232;
-    }
-    nav a,
-    nav a.btn {
-        font-size: 1.8em;
-    }
-    nav a.btn {
-        color: #fff;
-        background: #1a2232;
-    }
-    .burger,
-    nav .close {
-        display: none;
-    }
-
-
-
-
-
+        display:inline-block;
+        position: relative;
+    }    
+}
 
 
 
