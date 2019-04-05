@@ -1,3 +1,53 @@
+@font-face {
+    font-family: 'AirFactoryRounded';
+    src: url('AirFactoryRounded-Black.eot');
+    src: url('AirFactoryRounded-Black.eot?#iefix') format('embedded-opentype'),
+        url('AirFactoryRounded-Black.woff2') format('woff2'),
+        url('AirFactoryRounded-Black.woff') format('woff'),
+        url('AirFactoryRounded-Black.ttf') format('truetype'),
+        url('AirFactoryRounded-Black.svg#AirFactoryRounded-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AirFactoryRounded 3';
+    src: url('AirFactoryRounded-Regular2.eot');
+    src: url('AirFactoryRounded-Regular2.eot?#iefix') format('embedded-opentype'),
+        url('AirFactoryRounded-Regular2.woff2') format('woff2'),
+        url('AirFactoryRounded-Regular2.woff') format('woff'),
+        url('AirFactoryRounded-Regular2.ttf') format('truetype'),
+        url('AirFactoryRounded-Regular2.svg#AirFactoryRounded-Regular2') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AirFactoryRounded';
+    src: url('AirFactoryRounded-Regular4.eot');
+    src: url('AirFactoryRounded-Regular4.eot?#iefix') format('embedded-opentype'),
+        url('AirFactoryRounded-Regular4.woff2') format('woff2'),
+        url('AirFactoryRounded-Regular4.woff') format('woff'),
+        url('AirFactoryRounded-Regular4.ttf') format('truetype'),
+        url('AirFactoryRounded-Regular4.svg#AirFactoryRounded-Regular4') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AirFactoryRounded 2';
+    src: url('AirFactoryRounded-Regular3.eot');
+    src: url('AirFactoryRounded-Regular3.eot?#iefix') format('embedded-opentype'),
+        url('AirFactoryRounded-Regular3.woff2') format('woff2'),
+        url('AirFactoryRounded-Regular3.woff') format('woff'),
+        url('AirFactoryRounded-Regular3.ttf') format('truetype'),
+        url('AirFactoryRounded-Regular3.svg#AirFactoryRounded-Regular3') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT')
+
 /*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
 
 /*
@@ -104,12 +154,17 @@ body {
     font-size: 62.5%;
     font-weight: 300;
     color: #1a2232;
-    font-family: 'Zilla Slab', serif;
+    font-family: 'AirFactoryRounded 2', serif;
     background: url(../img/hero-background.png) no-repeat top center;
-    background: url(../img/footer-background.png) no-repeat bottom center;
+}
+h1 {
+    font-family: 'Old+Standard+TT';
+    font-weight: normal;
+    font-size: 3em;
+    color: #1a2232;
 }
 h2 {
-    font-family: 'Cookie', cursive;
+    font-family: 'AirFactoryRounded', cursive;
     font-size: 10em;
     color: #1a2232
 }
@@ -163,12 +218,12 @@ hr {
     margin: 0 auto;
 }
 section {
-    padding-top: 20px;
     padding-bottom: 20px;
     display: block;
 }
 blockquote {
     text-align: center;
+    font-family: 'Old+Standard+TT';
     font-weight: 400;
     font-style: italic;
     font-size: 3em;
@@ -181,8 +236,8 @@ blockquote::after,
 blockquote::before {
     content: '“';
     position: absolute;
-    font-size: 128px;
-    font-family: 'Cookie', cursive;
+    font-size: 78px;
+    font-family: 'AirFactoryRounded', cursive;
     color: #b7b7b7;
     opacity: .5;
     line-height: 40px;
@@ -261,10 +316,10 @@ header button {
     background: none;
     float: right;
     display: block;
-    border-radius: none;
     border: none;
-    padding: 0;
     padding: 10px 0;
+    margin: 8px 0 0 0;
+
 }
 header button span {
     width: 50px;
@@ -272,35 +327,68 @@ header button span {
     background-color: #fff;
     display: block;
     margin: 0 0 10px;
+}
 
-}
 nav {
-    display: none;
-}
-nav ul {
-    display: table-cell;
-    vertical-align: middle;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 nav a {
-    color: #fff;
+    color: #1a2232;
     font-size: 3.6em;
     line-height: 70px;
     padding: 5px 10px;
+    display: flex;
+    justify-content: center;
 }
+
+header button.close {
+    z-index: 1;
+}
+
+.close span:nth-of-type(1) {
+    transform: rotate(45deg);
+    margin: 0;
+}
+
+.close span:nth-of-type(2) {
+    transform: rotate(-45deg);
+    margin: 0;
+}
+
 .header-logo {
     float: left;
     max-width: 190px;
     padding: 10px 0;
-
 }
-.header-logo img {
+.header-logo-small img {
+    max-width: 100%;
+    display: block;
+    background: none;
+    border: none;
+    top: 24px;
+    transform: translate(50%);
+    overflow-x: auto;
+}
+
+.header-logo-large {
+    width: 50%;
+    display: block;
+    padding: 19px 10px 19px 0;
+    float: left;
+}
+
+.header-logo-large img {
     max-width: 100%;
     display: block;
 }
-
 /* ======== HEADER END ========== */
 
-.hero {}
 .hero ul {
     padding: 0;
     margin: 0;
@@ -309,8 +397,7 @@ nav a {
     border-radius: 50%;
     overflow: hidden;
     border: 12px solid #fff;
-    height: 300px;
-    width: 300px;
+    width: 100%;
     margin: 0 auto;
 }
 .hero .img-overlay img {
@@ -395,6 +482,7 @@ nav a {
 
 ul.tabs {
     list-style: none;
+    padding-top: 5px;
 }
 
 ul.tabs li {
@@ -430,21 +518,85 @@ ul.tabs li {
     right: 0;
 }
 
-
 /* ======== MENU END ========== */
 
 /* ======== ABOUT ========== */
-.about p:first-of-type {
-    font-size: 4em;
-    font-weight: 300;
-    line-height: 45px;
+.about h4 {
+    font-size: 3em;
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 1.2em;
+    margin: 20px 0;
 }
 .about li {
     font-size: 1.8em;
 }
 /* ======== ABOUT END========== */
 
+.info {
+    list-style: none;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.info li {
 
+}
+.info li ul {
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0;  
+}
+.info ul li {
+    font-size: 1.8em;
+    overflow: hidden;
+    line-height: 30px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.info .btn {
+    display: block;
+    margin: 20px auto;
+    width: 140px;
+}
+
+
+/* ======== FOOTER ========= */
+footer {
+    background: url(../img/footer-background.png) no-repeat bottom center;
+    width: 100%;
+    overflow: hidden;
+}
+footer .header-logo-large {
+    width: 100%;
+    margin: 0 auto;
+    float: none;
+}
+footer p {
+    color: #fff;
+    clear: both;
+    text-align: center;
+}
+footer ul {
+    display: block;
+    float: none;
+    padding: 0;
+    width: 140px;
+    margin: 0 auto;
+}
+footer ul li {
+    display: inline-block;
+    text-align: center;
+}
+footer ul a {
+    padding: 5px;
+    display: block;
+    cursor: pointer;
+}
+/* ======== FOOTER END ========= */
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
@@ -452,39 +604,93 @@ ul.tabs li {
    Modify as content requires.
    ========================================================================== */
 @media only screen and (min-width: 768px) {
+    header button {
+        margin-top: 22px;
+    }
     section {
-        padding-top: 30px;
         padding-bottom: 30px;
     }
-    /* ======== MENU ========== */
-    .menu .meals li {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 25%;
-        margin-bottom: 35px;
+    h3 {
+        max-width: 50%;
+        overflow: hidden;
     }
-    .menu .meals li:nth-child(even) {
-        margin-left: 4%;
+    h3 span {
+        margin: 0;
+        float: left;
     }
-    .menu .meals li:nth-child(odd) {
-         margin-right: 4%;
+    .hero ul li {
+        overflow: hidden;
+        position: relative;
+        padding-right: 350px;
+        padding-top: 80px;
+        min-height: 328px;
     }
-    .menu .tabs li {
-        padding: 11px 27px;
-        margin: 0 20px;
+    .hero .img-overlay {
+        float: right;
+        width: 300px;
+        position: absolute;
+        right: 10px;
+        top: 20px;
     }
+        
     /*------ meals list ---------*/
-    .meals li {
+
+    .meals {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
+    }
+    .meals li {
+        
         max-width: 50%;
         padding: 0 25px;
+    }
+
+    .about h4 {
+        font-size: 3em;
+    }
+
+    /*------meals list end-------*/
+
+    /*------contact & location ------*/
+    
+    .info ul li {
+        text-align: left;
+        float: left;
+        margin-right: 40px;
+    }
+    .info-contact {
+                
+    }
+    .info-location {
+
     }
 }
     
 @media only screen and (min-width: 992px) {
+
+    .nav {
+        background: transparent;
+        position: relative;
+    }
+    .nav a {
+        color: #fff;
+        font-size: 3.6em;
+        line-height: 70px;
+        padding: 5px 10px;
+        display: flex;
+        flex-direction: row;
+    }
+    .close {
+        display: none;
+    }
+    .burger {
+        display: none;
+    }
+    .header-logo-small img{
+        display: none; 
+    }
     /* ======== ABOUT ========== */
     .about p {
         column-count: 2;

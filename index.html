@@ -12,9 +12,7 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link href="https://fonts.googleapis.com/css?family=Cookie|Zilla+Slab:300,400,400i,500,600" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/normalize.css">
+   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
 </head>
@@ -22,7 +20,7 @@
 <body>
   <header>
     <div class="container clearfix">
-    <a href="index.html" class="header-logo large">
+    <a href="index.html" class="header-logo-large">
       <img src="img/carolija-logo-large.png" alt="Carolija Peciva & Kafe logo">
     </a>
     <button class="burger">
@@ -30,8 +28,8 @@
       <span></span>
       <span></span>
     </button>
-    <nav class="nav">
-      <a href="index.html" class="header-logo small">
+    <nav class="nav hidden">
+      <a href="index.html" class="header-logo-small">
         <img src="img/carolija-logo.png" alt="Carolija Peciva & Kafe logo">
       </a>
       <button class="close">
@@ -68,7 +66,7 @@
   
 <!-- Fotografije sa tekstom -->
 
-<section>
+<section class="pastry">
   <div class="container">
   <h3><span>Peciva</span></h3>
   <p>
@@ -83,7 +81,7 @@
       </ul>
     </div>
   </div>  
-  <ul class="meals unstyle-list clearfix">
+  <ul class="meals unstyle-list">
     <li>
       <div>
         <img src="img/1-heljda-pituljice-sa-ajvarom.png" alt="">
@@ -200,7 +198,7 @@
   <section class="about">
       <div class="container">
         <h3><span>O nama</span></h3>
-        <p>Bajkoviti svet peciva i kafe</p>
+        <h4>Bajkoviti svet peciva i kafe</h4>
         <p>Osnovana 2009. godine u Novom Sadu radionica Čarolija peciva je osvajač mnogobrojnih nagrada za svoja dela i priznanja za inovacije u asortimanu specijalno nutritivno vrednih proizvoda. Naša čarobna peciva možete kupiti na licu mesta. A ako želite ketering povodom rođendana, proslave, banketa ili kakvog sličnog događaja - peciva dostavljamo na Vašu adresu, a narudžbine primamo i nedeljom.</p>
         <p>Čarolija kafe je mesto u koje se svraća na druženje sa društvom, predah nakon napornog dana ili naprosto - na uživanje u šoljici kvalitetne, mirisne kafe. Odredite koje pecivo Vam najbolje ide uz prvu jutarnju kafu. Tu su i smutiji koji pažljivo biranim sastojcima i ukusom lako osvajaju zaljubljenike u zdrav život.</p>
         <p>Zajedno Čarolija peciva i kafe čine jedinstven spoj. Kombinacija vrhunskog ukusa peciva i kafe je ono što nas izdvaja od drugih. Zbog specifičnog ambijenta i prijatnog osoblja na koje smo posebno ponosni, gosti nam se uvek rado vraćaju. A mi zbog njih svakodnevno kreiramo Čaroliju.</p>
@@ -210,50 +208,61 @@
       </div>
     </section>
 
-  <section>
+  <section class="contact">
     <div class="container">
-      <h3><span>Kontakt</span></h3>
-      <p><strong>Telefon:</strong> 060/6500930</p>
-      <p><strong>Email:</strong> carolijapecivakafe@gmail.com</p>
-      <a href="#modal" class="btn">Poruči</a>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <h3><span>Lokacije i radno vreme</span></h3>
-      <ol>
-      <li><strong>Čarolija peciva I</strong></li>
-       <ul>
-        <li><strong>Adresa:</strong> Bul. Kralja Petra I</li>
-        <li><strong>Radno vreme:</strong></li>
-        <li>pon - ned 7:00 do 21:30</li>
-       </ul>
-      <li><strong>Čarolija peciva II</strong></li>
-       <ul>
-        <li><strong>Adresa:</strong> Fruškogorska 18</li>
-        <li><strong>Radno vreme:</strong></li>
-        <li>pon - sub 7:00 do 21:30</li>
-       </ul> 
-      <li><strong>Čarolija Kafe</strong></li>
-       <ul>
-        <li><strong>Adresa: Fruškogorska 16a</strong></li>
-        <li><strong>Radno vreme:</strong></li>
-        <li>pon - čet 7:00 do 23:00</li>
-        <li>pet 7:00 do 00:00</li>
-        <li>sub 8:00 do 00:00</li>
-        <li>ned 8:00 do 23:00</li>
-       </ul>
+      
+    <ol class="info">
+      <li class="info-contact">
+        <h3><span>Kontakt</span></h3>
+        <ul>
+         <li></li>
+         <li><strong>Telefon:</strong> 060/6500930</li>
+         <li><strong>Email:</strong> carolijapecivakafe@gmail.com</li>
+         <li>
+         <a href="#modal" class="btn">Poruči</a>
+         </li>
+        </ul>
+      </li>
+        <li class="info-location">
+          <h3><span>Lokacije i radno vreme</span></h3>
+           <ul>
+              <li><strong>Čarolija peciva I</strong></li>
+              <li><strong>Adresa:</strong> Bul. Kralja Petra I</li>
+              <li><strong>Radno vreme:</strong></li>
+              <li>pon - ned 7:00 do 21:30</li>
+           </ul>
+          <ul>
+              <li><strong>Čarolija peciva II</strong></li>
+              <li><strong>Adresa:</strong> Fruškogorska 18</li>
+              <li><strong>Radno vreme:</strong></li>
+              <li>pon - sub 7:00 do 21:30</li>
+          </ul> 
+          <ul>  
+              <li><strong>Čarolija Kafe</strong></li>
+              <li><strong>Adresa: Fruškogorska 16a</strong></li>
+              <li><strong>Radno vreme:</strong></li>
+              <li>pon - čet 7:00 do 23:00</li>
+              <li>pet 7:00 do 00:00</li>
+              <li>sub 8:00 do 00:00</li>
+              <li>ned 8:00 do 23:00</li>
+          </ul>
+        </li>
       </ol>    
     </div>
   </section>
 
   <footer>
     <div class="container clearfix">
-    <a href="index.html" class="header-logo large">
+    <a href="index.html" class="header-logo-large">
       <img src="img/carolija-logo-large.png" alt="Carolija Peciva & Kafe logo">
     </a>
+    <ul>
+      <li><a href="https://www.facebook.com/"><img src="img/fb.png" alt=""></a></li>
+      <li><a href="https://www.facebook.com/"><img src="img/insta.png" alt=""></a></li>
+      <li><a href="https://www.facebook.com/"><img src="img/linkedin.png" alt=""></a></li>
+    </ul>
     <p>All Rights Reserved 2019</p>
+
   </footer>
     
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
