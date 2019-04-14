@@ -632,7 +632,27 @@ footer ul a {
         right: 10px;
         top: 20px;
     }
-        
+    
+    /*------ pastry ------*/
+    .pastry h3 {
+        max-width: 100%;
+    }
+
+    .pastry h3 span {
+        float: none;
+        margin: 0;
+    }
+
+    .pastry p {
+        text-align: center;
+    }  
+
+    .pastry li p {
+        text-align: left;
+    } 
+
+    /*------ pastry end ------*/
+
     /*------ meals list ---------*/
 
     .meals {
@@ -641,12 +661,15 @@ footer ul a {
         flex-wrap: wrap;
         justify-content: center;
     }
-    .meals li {
-        
+    .meals li {  
         max-width: 50%;
-        padding: 0 25px;
     }
-
+    .meals li:nth-child(odd) {
+        padding-right: 10px;
+    }
+    .meals li:nth-child(even) {
+        padding-left: 10px;
+    }
     .about h4 {
         font-size: 3em;
     }
@@ -655,17 +678,38 @@ footer ul a {
 
     /*------contact & location ------*/
     
-    .info ul li {
+    .info-contact {
+        overflow: hidden;
+        padding-top: 20px;   
+    }
+    .info .info-contact li {
         text-align: left;
         float: left;
         margin-right: 40px;
+        margin: 0;
+        padding: 10px 20px;
+        width: 33.3%;
     }
-    .info-contact {
-                
+    .info .info-contact li strong {
+        display: block;
+    }
+    .info .info-contact li .btn {
+        margin: 12px 0 0 0;
+        float: right;
     }
     .info-location {
-
+        overflow: hidden;
     }
+    .info-location ul {
+        overflow: hidden;
+        float: left;
+        width: 33.3%;
+        padding: 0 0 20px 0;
+    }
+    .info ul li {
+        text-align: left;
+        padding: 0px 20px;
+    }    
 }
     
 @media only screen and (min-width: 992px) {
@@ -691,6 +735,44 @@ footer ul a {
     .header-logo-small img{
         display: none; 
     }
+
+    /* ------- hero -----*/
+    h1 {
+        font-size: 7em;
+        margin: 0.30em 0;
+    }
+
+    .hero  p {
+        text-align: center;
+        max-width: 70%;
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }
+    .hero .img-overlay {
+        right: 88px;
+    }
+        
+     /* ------- hero end -----*/
+
+     /* ------- pastry -------*/
+
+     h3 {
+        font-size: 3em;
+     }
+     p {
+        font-size: 2em;
+     }
+     .pastry-text p {
+        text-align: center;
+    }
+     .btn {
+        font-size: 2em;
+     }
+    .meals li {
+        padding: 25px !important;
+    }
+     /* ------pastry end ----*/
+
     /* ======== ABOUT ========== */
     .about p {
         column-count: 2;
@@ -715,6 +797,8 @@ footer ul a {
     blockquote {
         margin-top: -30px;
     }
+
+    /*------ meals list ---------*/
     .meals li {
         max-width: 33.3%;
         padding: 0 25px;
