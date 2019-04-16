@@ -156,6 +156,7 @@ body {
     color: #1a2232;
     font-family: 'AirFactoryRounded 2', serif;
     background: url(../img/hero-background.png) no-repeat top center;
+    background-size: 100% auto;
 }
 h1 {
     font-family: 'Old+Standard+TT';
@@ -255,10 +256,13 @@ blockquote::before {
 }
 .btn {
     font-weight: 500;
-    font-size: 1.8em;
+    font-size: 3em;
     color: #fff;
     background: #1a2232;
-    padding: 6px 27px;
+    padding: 0;
+    text-transform: uppercase;
+    max-width: 65%;
+    margin: 0 auto;
 }
 .btn-tab {
     background-color: #e3e1e1;
@@ -270,6 +274,8 @@ blockquote::before {
 }
 ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 ul li::before {
     content: "\2022";
@@ -312,21 +318,58 @@ ul li::before {
     text-align: center;
     color: #000;
 }*/
-header button {
+.burger {
     background: none;
     float: right;
     display: block;
     border: none;
-    padding: 10px 0;
-    margin: 8px 0 0 0;
-
+    padding: 0;
+    margin: 13px 0 0 0;
+    z-index: 1;
+    height: 48px;
+    position: relative;
+    z-index: 9999;
 }
-header button span {
+.burger span {
     width: 50px;
     height: 2px;
     background-color: #fff;
     display: block;
-    margin: 0 0 10px;
+    margin: 24px 0 10px;
+    position: relative;
+    transition: all .2s ease-in-out;
+}  
+.burger span:before, 
+.burger span::after {
+    position: absolute;
+    background: #fff;
+    content: '';
+    width: 50px;
+    height: 2px;
+    transition: all .2s ease-in-out;
+}
+.burger span:before {
+    top: -14px;
+}
+    
+.burger span:after {
+    top: 14px;
+}
+
+.burger.active span {
+    background: transparent; 
+}   
+.burger.active span:before {
+    transform: rotate(45deg) translate(5px, 6px);
+    background: #000;
+    top: -9px;
+
+}
+    
+.burger.active span:after {
+    transform: rotate(-45deg) translate(5px, -6px);
+    background: #000; 
+    top: 9px;
 }
 
 nav {
@@ -337,28 +380,21 @@ nav {
     top: 0;
     left: 0;
     z-index: 1;
+    display: none;
+}
+nav.active {
+    display: block;
 }
 nav a {
     color: #1a2232;
     font-size: 3.6em;
     line-height: 70px;
-    padding: 5px 10px;
+    padding: 0;
     display: flex;
     justify-content: center;
 }
-
-header button.close {
-    z-index: 1;
-}
-
-.close span:nth-of-type(1) {
-    transform: rotate(45deg);
-    margin: 0;
-}
-
-.close span:nth-of-type(2) {
-    transform: rotate(-45deg);
-    margin: 0;
+nav a.header-logo-small {
+    padding: 25px;
 }
 
 .header-logo {
@@ -371,9 +407,8 @@ header button.close {
     display: block;
     background: none;
     border: none;
-    top: 24px;
-    transform: translate(50%);
-    overflow-x: auto;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .header-logo-large {
@@ -411,9 +446,13 @@ header button.close {
     text-align: center;
 }
 .hero .btn {
-    width: 100px;
+    width: 128px;
     margin: 0 auto;
     display: block;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    padding: 9px;
 }
 
 
@@ -488,6 +527,7 @@ ul.tabs {
 ul.tabs li {
     display: inline;
     padding: 5px 15px;
+    text-transform: uppercase;
 }
 
 /*------ meals list ---------*/
@@ -530,6 +570,9 @@ ul.tabs li {
 }
 .about li {
     font-size: 1.8em;
+}
+.about p {
+    column-count: 1;
 }
 /* ======== ABOUT END========== */
 
@@ -623,28 +666,41 @@ footer ul a {
         position: relative;
         padding-right: 350px;
         padding-top: 80px;
+        padding-bottom: 80px;
         min-height: 328px;
+    }
+    .hero p {
+        text-align: center;
+        max-width: 70%;
+        margin: 0 auto;
+        padding-bottom: 20px;
     }
     .hero .img-overlay {
         float: right;
         width: 300px;
         position: absolute;
-        right: 10px;
-        top: 20px;
+        right: 66px;
+        top: 41px;
     }
     
     /*------ pastry ------*/
     .pastry h3 {
-        max-width: 100%;
+        max-width: 50%;
+        margin: 0 auto;
+        padding-top: 35px;
+        padding-bottom: 35px;
     }
 
     .pastry h3 span {
         float: none;
         margin: 0;
     }
-
+    .pastry h3::before {
+        bottom: 48px;
+    }
     .pastry p {
         text-align: center;
+        padding-bottom: 35px;
     }  
 
     .pastry li p {
@@ -695,7 +751,7 @@ footer ul a {
     }
     .info .info-contact li .btn {
         margin: 12px 0 0 0;
-        float: right;
+        float: none;
     }
     .info-location {
         overflow: hidden;
@@ -713,7 +769,137 @@ footer ul a {
 }
     
 @media only screen and (min-width: 992px) {
+    .burger,
+    .burger.active {
+        display: none;
+    }
+    .burger span {
+        display: none;
+    }
+    .header-logo-small {
+        display: none;
+    }
+    .header-logo-large {
+        width: 26%;
+    }
+    nav,
+    nav.active {
+        background: none;
+        position: relative;
+        left: auto;
+        top: auto;
+        width: auto;
+        height: auto;
+        z-index: 1;
+        float: right;
+        display: block;
+        padding: 10px 0;
+    }
+    nav ul {
+        display: block;
+        float: right;
+        padding: 0;
+    }
+    nav ul li {
+        display: block;
+        float: left;
+    }
+    nav a {
+        color: #fff;
+        font-size: 2em;
+        line-height: normal;
+        padding:  17px 10px;
+        display: block;
+    }
+    nav a.btn {
+        max-width: none;
+        margin: 14px 0;
+    }
+    header button {
+        margin-top: 22px;
+    }
+    /* ------- hero -----*/
+    h1 {
+        font-size: 6em;
+        margin: 0.30em 0;
+    }
 
+    .hero  p {
+        text-align: center;
+        max-width: 70%;
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }
+    .hero .img-overlay {
+        right: 53px;
+        top: 24px;
+        width: 372px;
+    }
+    .hero ul li {
+        padding-top: 106px;
+    }    
+     /* ------- hero end -----*/
+
+     /* ------- pastry -------*/
+
+    h3 {
+        font-size: 3em;
+     }
+    p {
+        font-size: 2em;
+     }
+    .pastry-text p {
+        text-align: center;
+    }
+    ul.tabs li {
+        padding: 8px 23px;
+    }
+    .btn {
+        font-size: 1.6em;
+        padding: 6px 22px;
+     }
+    .meals li {
+        padding: 25px !important;
+        margin-bottom: -59px;
+    }
+     /* ------pastry end ----*/
+
+    /* ======== ABOUT ========== */
+    .about h4 {
+        margin: 20px 0px 20px 20px;
+    }
+    .about p {
+        column-count: none;
+        box-sizing: border-box;
+        text-align: left;
+        float: left;
+        margin-right: 40px;
+        margin: 1px;
+        padding: 10px 20px;
+        width: 50%;
+    }
+    .about p:nth-of-type(3) {
+        margin: -458px 0;
+        float: right;
+    }
+    .about blockquote {
+        display: inline-block;
+        width: calc(50% - 32px);
+        vertical-align: top;
+    }
+    blockquote {
+        margin-top: 256px;
+    }
+    
+    /*------ meals list ---------*/
+    .meals li {
+        max-width: 33.3%;
+        padding: 0 25px;
+    }
+}
+    
+
+@media only screen and (min-width: 1200px) {
     .nav {
         background: transparent;
         position: relative;
@@ -736,77 +922,31 @@ footer ul a {
         display: none; 
     }
 
-    /* ------- hero -----*/
+/*-------hero--------*/
     h1 {
-        font-size: 7em;
+        font-size: 8em;
         margin: 0.30em 0;
     }
-
+    h3 {
+        font-size: 3em;
+    }
+    
     .hero  p {
         text-align: center;
-        max-width: 70%;
+        max-width: 55%;
         margin: 0 auto;
-        padding-bottom: 20px;
+        padding-bottom: 37px;
+        font-size: 2.4em;
     }
     .hero .img-overlay {
-        right: 88px;
+        right: 87px;
+        top: 50px;
+        width: 394px;
     }
-        
-     /* ------- hero end -----*/
-
-     /* ------- pastry -------*/
-
-     h3 {
-        font-size: 3em;
-     }
-     p {
-        font-size: 2em;
-     }
-     .pastry-text p {
-        text-align: center;
+    .hero ul li {
+        padding-top: 106px;
     }
-     .btn {
-        font-size: 2em;
-     }
-    .meals li {
-        padding: 25px !important;
-    }
-     /* ------pastry end ----*/
-
-    /* ======== ABOUT ========== */
-    .about p {
-        column-count: 2;
-        column-gap: 60px;
-    }
-    .about p:first-of-type {
-        column-count: 1;
-    }
-    .about hr,
-    .about h5,
-    .about ul,
-    .about blockquote {
-        display: inline-block;
-        width: calc(50% - 32px);
-        vertical-align: top;
-    }
-    .about hr,
-    .about h5,
-    .about ul {
-        margin-right: 60px;
-    }
-    blockquote {
-        margin-top: -30px;
-    }
-
-    /*------ meals list ---------*/
-    .meals li {
-        max-width: 33.3%;
-        padding: 0 25px;
-    }
-}
-    
-
-@media only screen and (min-width: 1200px) {
+/*-------hero end--------*/
 /*------ meals list ---------*/
     .meals li {
         max-width: 24%;
@@ -814,13 +954,56 @@ footer ul a {
         display:inline-block;
         position: relative;
     }    
+
+    .about p {
+        column-count: none;
+        box-sizing: border-box;
+        text-align: left;
+        float: left;
+        margin-right: 40px;
+        margin: 1px;
+        padding: 10px 20px;
+        width: 50%;
+    }
+    .about p:nth-of-type(3) {
+        margin: -368px 0;
+        float: right;
+    }
+    .about blockquote {
+        display: inline-block;
+        width: calc(50% - 32px);
+        vertical-align: top;
+    }
+    blockquote {
+        margin-top: 190px;
+    }
+    .info .info-contact {
+        float: left;
+        width: 30%;
+        padding-top: 0;
+    }
+    .info .info-contact li {
+        width: 100%;
+        float: none;
+    }
+    .info-contact h3 {
+        max-width: 100%;
+    }
+    .info-contact .btn {
+        padding: 13px 22px;
+    }
+    .info .info-location {
+        float: left;
+        width: 70%;
+    }
+    .info-location ul {
+        width: 33.3%;
+    }
+    .info-location h3 {
+        max-width: 93%;
+    }
+
 }
-
-
-
-
-
-
 
 
 
