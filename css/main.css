@@ -612,6 +612,7 @@ footer {
     background: url(../img/footer-background.png) no-repeat bottom center;
     width: 100%;
     overflow: hidden;
+    padding-top: 77px;
 }
 footer .header-logo-large {
     width: 100%;
@@ -900,26 +901,54 @@ footer ul a {
     
 
 @media only screen and (min-width: 1200px) {
-    .nav {
-        background: transparent;
+    .burger,
+    .burger.active {
+        display: none;
+    }
+    .burger span {
+        display: none;
+    }
+    .header-logo-small {
+        display: none;
+    }
+    .header-logo-large {
+        width: 26%;
+    }
+    nav,
+    nav.active {
+        background: none;
         position: relative;
+        left: auto;
+        top: auto;
+        width: auto;
+        height: auto;
+        z-index: 1;
+        float: right;
+        display: block;
+        padding: 15px 0;
     }
-    .nav a {
+    nav ul {
+        display: block;
+        float: right;
+        padding: 0;
+    }
+    nav ul li {
+        display: block;
+        float: left;
+    }
+    nav a {
         color: #fff;
-        font-size: 3.6em;
-        line-height: 70px;
-        padding: 5px 10px;
-        display: flex;
-        flex-direction: row;
+        font-size: 2em;
+        line-height: normal;
+        padding:  17px 10px;
+        display: block;
     }
-    .close {
-        display: none;
+    nav a.btn {
+        max-width: none;
+        margin: 14px 0;
     }
-    .burger {
-        display: none;
-    }
-    .header-logo-small img{
-        display: none; 
+    header button {
+        margin-top: 22px;
     }
 
 /*-------hero--------*/
