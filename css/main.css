@@ -256,7 +256,7 @@ blockquote::before {
 }
 .btn {
     font-weight: 500;
-    font-size: 3em;
+    font-size: 1.6em;
     color: #fff;
     background: #1a2232;
     padding: 0;
@@ -414,13 +414,14 @@ nav a.header-logo-small {
 .header-logo-large {
     width: 50%;
     display: block;
-    padding: 19px 10px 19px 0;
+    padding: 0px 0px 0px 0;
     float: left;
 }
 
 .header-logo-large img {
     max-width: 100%;
     display: block;
+    margin: 0 auto;
 }
 /* ======== HEADER END ========== */
 
@@ -612,7 +613,8 @@ footer {
     background: url(../img/footer-background.png) no-repeat bottom center;
     width: 100%;
     overflow: hidden;
-    padding-top: 77px;
+    padding-top: 0px;
+    background-size: 100% auto;
 }
 footer .header-logo-large {
     width: 100%;
@@ -753,6 +755,8 @@ footer ul a {
     .info .info-contact li .btn {
         margin: 12px 0 0 0;
         float: none;
+        text-align: center;
+        font-size: 1em;
     }
     .info-location {
         overflow: hidden;
@@ -897,6 +901,10 @@ footer ul a {
         max-width: 33.3%;
         padding: 0 25px;
     }
+
+    footer {
+        padding-top: 45px;
+    }
 }
     
 
@@ -1030,6 +1038,10 @@ footer ul a {
     }
     .info-location h3 {
         max-width: 93%;
+    }
+
+    footer {
+        padding-top: 82px;
     }
 
 }
