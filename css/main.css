@@ -422,6 +422,7 @@ nav a.header-logo-small {
     max-width: 100%;
     display: block;
     margin: 0 auto;
+    padding-top: 12px;
 }
 /* ======== HEADER END ========== */
 
@@ -787,6 +788,9 @@ footer ul a {
     .header-logo-large {
         width: 26%;
     }
+    .header-logo-large img {
+        padding-top: 16px;
+    }
     nav,
     nav.active {
         background: none;
@@ -1041,7 +1045,7 @@ footer ul a {
     }
 
     footer {
-        padding-top: 82px;
+        padding-top: 164px;
     }
 
 }
